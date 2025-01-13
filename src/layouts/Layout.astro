@@ -1,0 +1,38 @@
+---
+import Navbar from '../components/Navbar.astro';
+import '@fontsource/montserrat';
+import '@fontsource/merriweather';
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="AstroEchoes - Community-Centered Blog" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title} | AstroEchoes</title>
+  </head>
+  <body class="bg-light min-h-screen">
+    <Navbar />
+    <main>
+      <slot />
+    </main>
+  </body>
+</html>
+
+<style is:global>
+  body {
+    font-family: 'Merriweather', serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+  }
+</style>
